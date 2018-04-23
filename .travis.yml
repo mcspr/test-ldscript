@@ -34,7 +34,7 @@ sudo: false
 #        - "~/.platformio"
 
 install:
-  - pip install -U platformio
+  - pip install git+https://github.com/platformio/platformio-core.git
   - platformio update
 
 jobs:
