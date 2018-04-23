@@ -26,22 +26,24 @@
 
 language: python
 python:
-    - "2.7"
+  - "2.7"
 
 sudo: false
-cache:
-    directories:
-        - "~/.platformio"
+#cache:
+#    directories:
+#        - "~/.platformio"
 
 install:
-    - pip install -U platformio
-    - platformio update
+  - pip install -U platformio
+  - platformio update
 
-script:
-    - platformio run -v -e esp01_1m_150 ; true
-    - platformio run -v -e esp01_1m_160 ; true
-    - platformio run -v -e esp01_1m_170 ; true
-
+jobs:
+  include:
+    - stage: build
+      script: platformio run -v -e esp01_1m_150 ; true
+    - script: platformio run -v -e esp01_1m_160 ; true
+    - script: platformio run -v -e esp01_1m_170 ; true
+    - script: platformio run -v -e esp01_1m_170_eagle ; true
 
 #
 # Template #2: The project is intended to by used as a library with examples
