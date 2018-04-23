@@ -40,10 +40,9 @@ install:
 jobs:
   include:
     - stage: build
-      script: platformio run -v -e esp01_1m_150 ; true
-    - script: platformio run -v -e esp01_1m_160 ; true
-    - script: platformio run -v -e esp01_1m_170 ; true
+      script: platformio run -v -e esp01_1m_170_proj ; true
     - script: platformio run -v -e esp01_1m_170_eagle ; true
+    - script: platformio run -v -e esp01_1m_stage_eagle ; true
 
 #
 # Template #2: The project is intended to by used as a library with examples
