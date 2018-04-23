@@ -38,7 +38,9 @@ install:
     - platformio update
 
 script:
-    - platformio run --verbose
+    - platformio run -v -e esp01_1m_150 ; true
+    - platformio run -v -e esp01_1m_160 ; true
+    - platformio run -v -e esp01_1m_170 ; true
 
 
 #
